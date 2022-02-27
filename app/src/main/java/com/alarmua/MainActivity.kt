@@ -1,8 +1,8 @@
-package com.airalarmua
+package com.alarmua
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.airalarmua.ui.main.MainFragment
+import com.alarmua.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.airalarmua
+package com.alarmua
 
 import org.junit.Test
 

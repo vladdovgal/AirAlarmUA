@@ -1,4 +1,4 @@
-package com.airalarmua.ui.main
+package com.alarmua.ui.main
 
 import androidx.lifecycle.ViewModel
 

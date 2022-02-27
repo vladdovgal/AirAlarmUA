@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262294535480",
+    "project_id": "alarmua-9afcc",
+    "storage_bucket": "alarmua-9afcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262294535480:android:a09b83a006dc7ff1b595cd",
+        "android_client_info": {
+          "package_name": "com.alarmua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262294535480-kilh5q7amajn9nd183m6bq3l7gbpgp9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3pNmOgYwcB7j5wPFW-bxPRcg8Vssqur4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262294535480-kilh5q7amajn9nd183m6bq3l7gbpgp9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

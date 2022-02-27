@@ -1,7 +1,7 @@
 package com.alarmua.ui.main
 
-import androidx.lifecycle.ViewModel
+import com.alarmua.ui.base.BaseViewModel
 
-class MainViewModel : ViewModel() {
+class MainViewModel : BaseViewModel() {
     // TODO: Implement the ViewModel
 }

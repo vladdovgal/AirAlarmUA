@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextViewStyle"
+        parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/Label</item>
+    </style>
+
+    <style name="Label" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/font_family</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="Label.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Label.H1" parent="Label.Bold">
+        <item name="lineHeight">@dimen/line_height_h1</item>
+        <item name="android:textSize">@dimen/text_size_h1</item>
+    </style>
+
+    <style name="Label.H2"
+        parent="Label.Bold">
+        <item name="lineHeight">@dimen/line_height_h2</item>
+        <item name="android:textSize">@dimen/text_size_h2</item>
+    </style>
+
+    <style name="Label.H3"
+        parent="Label.Bold">
+        <item name="lineHeight">@dimen/line_height_h3</item>
+        <item name="android:textSize">@dimen/text_size_h3</item>
+    </style>
+
+    <style name="Label.H4"
+        parent="Label.Bold">
+        <item name="lineHeight">@dimen/line_height_h4</item>
+        <item name="android:textSize">@dimen/text_size_h4</item>
+    </style>
+
+    <style name="Label.H5"
+        parent="Label.Bold">
+        <item name="lineHeight">@dimen/line_height_h5</item>
+        <item name="android:textSize">@dimen/text_size_h5</item>
+    </style>
+
+    <style name="Label.Body1">
+        <item name="lineHeight">@dimen/line_height_body1</item>
+        <item name="android:textSize">@dimen/text_size_body1</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Label.Body1.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Label.Body2">
+        <item name="lineHeight">@dimen/line_height_body2</item>
+        <item name="android:textSize">@dimen/text_size_body2</item>
+    </style>
+
+    <style name="Label.Body2.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Button"
+        parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:insetTop">@dimen/zero</item>
+        <item name="android:insetBottom">@dimen/zero</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="backgroundTint">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textColor">@color/backgroundColor</item>
+        <item name="android:fontFamily">@font/font_family</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <dimen name="zero">0dp</dimen>
+</resources>

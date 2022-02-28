@@ -24,11 +24,27 @@
             app:destination="@+id/locationsListFragment" />
     </fragment>
 
-    <action
-        android:id="@+id/actionGlobalToLocationsListFragment"
-        app:destination="@+id/locationsListFragment" />
+<!--    <action-->
+<!--        android:id="@+id/actionGlobalToAlertDetails"-->
+<!--        app:destination="@id/alertDetailsFragment">-->
+<!--        <argument-->
+<!--            android:name="alert_type"-->
+<!--            app:argType="String"-->
+<!--            app:nullable="true" />-->
+<!--    </action>-->
 
-    <action
-        android:id="@+id/actionGlobalToMainFragment"
-        app:destination="@+id/mainFragment" />
+    <!--    <action-->
+    <!--        android:id="@+id/actionGlobalToLocationsListFragment"-->
+    <!--        app:destination="@+id/locationsListFragment" />-->
+
+    <!--    <action-->
+    <!--        android:id="@+id/actionGlobalToMainFragment"-->
+    <!--        app:destination="@+id/mainFragment" />-->
+
+    <fragment
+        android:id="@+id/alertDetailsFragment"
+        android:name="com.alarmua.ui.alert.AlertDetailsFragment"
+        android:label="fragment_alert_details"
+        tools:layout="@layout/fragment_alert_details" />
+
 </navigation>

@@ -11,8 +11,8 @@ open class BaseViewModel: ViewModel() {
     private val _isLoading: MutableLiveData<Boolean> = MutableLiveData(false)
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private val _toastMessage: MutableLiveData<String> = MutableLiveData("")
-    val toastMessage: LiveData<String> = _toastMessage
+    private val _shortMessage: MutableLiveData<String> = MutableLiveData("")
+    val shortMessage: LiveData<String> = _shortMessage
 
     fun loading(loading: Boolean) {
         viewModelScope.launch {
@@ -22,7 +22,7 @@ open class BaseViewModel: ViewModel() {
 
     fun showToast(message: String) {
         viewModelScope.launch {
-            _toastMessage.value = message
+            _shortMessage.value = message
         }
     }
 }

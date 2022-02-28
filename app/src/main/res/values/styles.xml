@@ -66,11 +66,11 @@
         parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:insetTop">@dimen/zero</item>
         <item name="android:insetBottom">@dimen/zero</item>
-        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:gravity">center</item>
         <item name="android:textAllCaps">true</item>
-        <item name="backgroundTint">@color/primaryTextColor</item>
+        <item name="backgroundTint">@color/primaryColor</item>
         <item name="android:textSize">@dimen/button_text_size</item>
-        <item name="android:textColor">@color/backgroundColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:fontFamily">@font/font_family</item>
         <item name="android:textStyle">bold</item>
     </style>

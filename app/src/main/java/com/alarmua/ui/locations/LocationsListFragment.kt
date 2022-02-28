@@ -1,16 +1,21 @@
 package com.alarmua.ui.locations
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.alarmua.R
 import com.alarmua.databinding.FragmentLocationsListBinding
+import com.alarmua.service.CURRENT_LOCATION_ID_KEY
+import com.alarmua.service.CURRENT_LOCATION_SHARED_PREFS_FILE_NAME
 import com.alarmua.ui.locations.list.LocationsListAdapter
+import com.google.android.material.snackbar.Snackbar
+
 
 class LocationsListFragment : Fragment() {
 
@@ -50,8 +55,14 @@ class LocationsListFragment : Fragment() {
             }
         }
         lifecycleScope.launchWhenResumed {
-            viewModel.toastMessage.observe(viewLifecycleOwner) { message ->
-                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+            viewModel.shortMessage.observe(viewLifecycleOwner) { message ->
+                if (message.isNotEmpty()) {
+                    binding?.apply {
+                        Snackbar.make(root, message, Snackbar.LENGTH_LONG)
+                            .setAction(R.string.dismiss) { /*dismiss*/ }
+                            .show()
+                    }
+                }
             }
         }
     }
@@ -63,10 +74,22 @@ class LocationsListFragment : Fragment() {
         binding?.apply {
             locationsList.adapter = listAdapter
             saveButton.setOnClickListener {
+                val selectedLocationId = viewModel.locations.value?.find { it.isSelected }?.id ?: "NULL"
+                val lastLocationId = updateCurrentLocationSharedPrefs(selectedLocationId)
                 viewModel.saveLocation(
-                    viewModel.locations.value?.find { it.isSelected }?.id ?: "NULL"
+                    lastLocationId = lastLocationId,
+                    selectedLocationId = selectedLocationId,
                 )
             }
+        }
+    }
+
+    private fun updateCurrentLocationSharedPrefs(selectedLocationId: String): String? {
+        return activity?.let {
+            val prefs = it.getSharedPreferences(CURRENT_LOCATION_SHARED_PREFS_FILE_NAME, Context.MODE_PRIVATE)
+            val lastLocationId = prefs.getString(CURRENT_LOCATION_ID_KEY, null) // get last saved location
+            prefs.edit().putString(CURRENT_LOCATION_ID_KEY, selectedLocationId).apply()// save new locationId
+            return@let lastLocationId
         }
     }
 }

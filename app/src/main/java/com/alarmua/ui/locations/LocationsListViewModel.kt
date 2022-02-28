@@ -57,22 +57,44 @@ class LocationsListViewModel : BaseViewModel() {
         }
     }
 
-    fun saveLocation(locationId: String) {
+    fun saveLocation(lastLocationId: String?, selectedLocationId: String) {
         viewModelScope.launch {
             loading(true)
-            delay(1000)
-            // send location to server
-            FirebaseMessaging.getInstance().subscribeToTopic(locationId)
-                .addOnCompleteListener { task ->
-                    var msg = "Subscribed to $locationId successfully"
-                    if (!task.isSuccessful) {
-                        msg = "Failure occurred while trying to subscribe to $locationId"
-                    }
-                    showToast(msg)
-                }
+            if (lastLocationId != null && selectedLocationId != lastLocationId) {
+                unsubscribeFromLocationUpdates(lastLocationId)
+            }
+            if (lastLocationId != selectedLocationId) {
+                // send location to server
+                // ....
+                subscribeOnLocationUpdates(selectedLocationId)
+            } else {
+                showToast("You are already subscribed for $selectedLocationId updates")
+            }
             loading(false)
             // navigate to main screen
         }
+    }
+
+    private fun unsubscribeFromLocationUpdates(locationId: String) {
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(locationId)
+            .addOnCompleteListener { task ->
+                var msg = "Unsubscribed from $locationId successfully"
+                if (!task.isSuccessful) {
+                    msg = "Failure occurred while trying unsubscribe from $locationId"
+                }
+                showToast(msg)
+            }
+    }
+
+    private fun subscribeOnLocationUpdates(locationId: String) {
+        FirebaseMessaging.getInstance().subscribeToTopic(locationId)
+            .addOnCompleteListener { task ->
+                var msg = "Subscribed to $locationId successfully"
+                if (!task.isSuccessful) {
+                    msg = "Failure occurred while trying to subscribe to $locationId"
+                }
+                showToast(msg)
+            }
     }
 
 }

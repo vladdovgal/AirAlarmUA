@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/locationItem"
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/locationItem"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingHorizontal="@dimen/spacing_6"
     android:background="@color/backgroundColor"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RadioButton
         android:id="@+id/radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/spacing_2"
+        android:layout_marginStart="@dimen/spacing_4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         />
 
     <TextView
         android:id="@+id/locationName"
         style="@style/Label.Body1.Bold"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_6"
+        app:layout_constraintTop_toTopOf="@id/radioButton"
+        app:layout_constraintBottom_toBottomOf="@id/radioButton"
+        app:layout_constraintStart_toEndOf="@id/radioButton"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:text="Lviv district"
         />
 
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/secondaryTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

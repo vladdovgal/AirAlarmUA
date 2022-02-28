@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/drawable-v24/horizontal_divider.xml" value="0.199" />
+        <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/drawable/hor_div.xml" value="0.199" />
+        <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/drawable/horizontal_divider1.xml" value="0.199" />
         <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/font/font_family.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/fragment_area_selection.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/fragment_area_selection_list.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/fragment_locations_list.xml" value="0.264" />
+        <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/fragment_locations_list.xml" value="0.176" />
         <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/fragment_locations_list2.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/horizontal_divider.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/item_location.xml" value="0.264" />
         <entry key="..\:/Users/Vladyslav_Dovhal/AndroidStudioProjects/AirAlarmUA/app/src/main/res/layout/main_activity.xml" value="0.2328125" />
       </map>

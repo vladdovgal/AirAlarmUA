@@ -11,6 +11,7 @@ const val LOG_TAG = "LOG_TAG"
 class AlarmAppUA : Application() {
     override fun onCreate() {
         super.onCreate()
+
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
                 Log.w(LOG_TAG, "Fetching FCM registration token failed", task.exception)
@@ -21,8 +22,7 @@ class AlarmAppUA : Application() {
             val token = task.result
 
             // Log and toast
-            Log.d(LOG_TAG, token.toString())
-            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+            Toast.makeText(baseContext, "Current FCM token: $token", Toast.LENGTH_SHORT).show()
         })
     }
 }

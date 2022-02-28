@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/locationsListFragment">
+
+    <fragment
+        android:id="@+id/locationsListFragment"
+        android:name="com.alarmua.ui.locations.LocationsListFragment"
+        android:label="LocationsListFragment">
+        <action
+            android:id="@+id/actionLocationsListFragmentToMainFragment"
+            app:destination="@+id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.alarmua.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/actionMainFragmentToLocationsListFragment"
+            app:destination="@+id/locationsListFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/actionGlobalToLocationsListFragment"
+        app:destination="@+id/locationsListFragment" />
+
+    <action
+        android:id="@+id/actionGlobalToMainFragment"
+        app:destination="@+id/mainFragment" />
+</navigation>

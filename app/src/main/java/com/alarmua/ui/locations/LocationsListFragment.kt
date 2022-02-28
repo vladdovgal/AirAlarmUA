@@ -9,6 +9,8 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.NavHostFragment
 import com.alarmua.R
 import com.alarmua.databinding.FragmentLocationsListBinding
 import com.alarmua.service.CURRENT_LOCATION_ID_KEY
@@ -65,6 +67,13 @@ class LocationsListFragment : Fragment() {
                 }
             }
         }
+        lifecycleScope.launchWhenResumed {
+            viewModel.navigationDestination.observe(viewLifecycleOwner) { destination ->
+                if (destination != null) {
+                    navigateTo(destination)
+                }
+            }
+        }
     }
 
     private fun initView() {
@@ -84,11 +93,17 @@ class LocationsListFragment : Fragment() {
         }
     }
 
+    private fun navigateTo(destination: NavDirections) {
+        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        navController.navigate(destination)
+    }
+
     private fun updateCurrentLocationSharedPrefs(selectedLocationId: String): String? {
         return activity?.let {
             val prefs = it.getSharedPreferences(CURRENT_LOCATION_SHARED_PREFS_FILE_NAME, Context.MODE_PRIVATE)
             val lastLocationId = prefs.getString(CURRENT_LOCATION_ID_KEY, null) // get last saved location
-            prefs.edit().putString(CURRENT_LOCATION_ID_KEY, selectedLocationId).apply()// save new locationId
+            prefs.edit().putString(CURRENT_LOCATION_ID_KEY, selectedLocationId).apply() // save new locationId
             return@let lastLocationId
         }
     }

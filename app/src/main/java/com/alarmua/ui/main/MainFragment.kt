@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.alarmua.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
@@ -23,6 +24,17 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = MainFragmentBinding.inflate(inflater, container, false)
+        initViews()
         return binding?.root
+    }
+
+    private fun initViews() {
+        binding?.apply {
+            btnSelectLocation.setOnClickListener {
+                findNavController().navigate(
+                    MainFragmentDirections.actionMainFragmentToLocationsListFragment()
+                )
+            }
+        }
     }
 }

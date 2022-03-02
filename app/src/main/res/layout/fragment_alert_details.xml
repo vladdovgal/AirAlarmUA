@@ -1,22 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/rootLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="@color/secondaryDarkColor"
     tools:context=".ui.alert.AlertDetailsFragment"
     >
 
-    <TextView
-        style="@style/TextViewStyle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ALERT"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        >
+
+        <TextView
+            android:id="@+id/alertTitle"
+            style="@style/Label.H1"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/air_alarm_on_title"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:lottie_rawRes="@raw/alert"
+            />
+
+        <TextView
+            android:id="@+id/alertDescription"
+            style="@style/Label.Body1"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="@dimen/spacing_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/air_alarm_on_description"
+            />
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,7 +42,7 @@ class LocationsListFragment : Fragment() {
 
     private fun setObservers() {
         lifecycleScope.launchWhenResumed {
-            viewModel.locations.observe(viewLifecycleOwner) { items ->
+            viewModel.locationItems.observe(viewLifecycleOwner) { items ->
                 listAdapter.submitList(items)
             }
         }
@@ -83,7 +83,7 @@ class LocationsListFragment : Fragment() {
         binding?.apply {
             locationsList.adapter = listAdapter
             saveButton.setOnClickListener {
-                val selectedLocationId = viewModel.locations.value?.find { it.isSelected }?.id ?: "NULL"
+                val selectedLocationId = viewModel.locationItems.value?.find { it.isSelected }?.id ?: "NULL"
                 val lastLocationId = updateCurrentLocationSharedPrefs(selectedLocationId)
                 viewModel.saveLocation(
                     lastLocationId = lastLocationId,

@@ -8,10 +8,13 @@
     <fragment
         android:id="@+id/locationsListFragment"
         android:name="com.alarmua.ui.locations.LocationsListFragment"
-        android:label="LocationsListFragment">
+        android:label="LocationsListFragment"
+        >
         <action
-            android:id="@+id/actionLocationsListFragmentToMainFragment"
-            app:destination="@+id/mainFragment" />
+            android:id="@+id/actionLocationsListFragmentToSuccessActionFragment"
+            app:destination="@+id/successActionFragment"
+            />
+
     </fragment>
 
     <fragment
@@ -24,27 +27,34 @@
             app:destination="@+id/locationsListFragment" />
     </fragment>
 
-<!--    <action-->
-<!--        android:id="@+id/actionGlobalToAlertDetails"-->
-<!--        app:destination="@id/alertDetailsFragment">-->
-<!--        <argument-->
-<!--            android:name="alert_type"-->
-<!--            app:argType="String"-->
-<!--            app:nullable="true" />-->
-<!--    </action>-->
-
-    <!--    <action-->
-    <!--        android:id="@+id/actionGlobalToLocationsListFragment"-->
-    <!--        app:destination="@+id/locationsListFragment" />-->
-
-    <!--    <action-->
-    <!--        android:id="@+id/actionGlobalToMainFragment"-->
-    <!--        app:destination="@+id/mainFragment" />-->
-
     <fragment
         android:id="@+id/alertDetailsFragment"
         android:name="com.alarmua.ui.alert.AlertDetailsFragment"
         android:label="fragment_alert_details"
-        tools:layout="@layout/fragment_alert_details" />
+        tools:layout="@layout/fragment_alert_details" >
+        <argument
+            android:name="alert_type"
+            app:argType="string"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/successActionFragment"
+        android:name="com.alarmua.ui.success.SuccessActionFragment"
+        android:label="fragment_success_action"
+        tools:layout="@layout/fragment_success_action"
+        >
+        <argument
+            android:name="location_name"
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/actionSuccessFragmentToMainFragment"
+            app:destination="@id/mainFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/locationsListFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
 
 </navigation>

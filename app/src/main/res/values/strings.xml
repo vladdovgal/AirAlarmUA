@@ -2,8 +2,19 @@
     <string name="app_name">AlarmUA</string>
     <string name="default_notification_channel_id">default_notification_channel_id</string>
 
-    <string name="location_selection_description">Choose your current location from the list below.</string>
-    <string name="button_save">Save</string>
+    <string name="location_selection_description">Виберіть ваше поточне місцезнаходження із списку доступних.</string>
+    <string name="button_save">Підтвердити</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dismiss">Dismiss</string>
+    <string name="thank_you">Дякую\!</string>
+    <string name="subscription_description">Ви успішно підписалися на сповіщення в %1$s області. \n <b> Увімкніть звук сповіщеннь, щоб не пропустити повітряну тривогу. </b> </string>
+    <string name="change_location">Змінити область</string>
+    <string name="cancel_subscription">Скасувати підписку</string>
+    <string name="support_army">Підтримати армію</string>
+    <string name="air_alarm_on_title">Увага! \n Повітряна тривога!</string>
+    <string name="air_alarm_off_title">Увага! \n Відбій повітряної тривоги!</string>
+    <string name="air_alarm_on_description">Зберігайте спокій! \n Якщо ви вдома, вимкніть світло та газ, візьміть документи, необхідні ліки, трохи харчів та води і перейдіть у найближче укриття. Повідомте також сусідів та осіб з інвалідністю. Допоможіть їм перейти в укриття. \n \n Увага! Залишайтеся в укритті до наступного сигналу сирени, яка означає відбій повітряної тривоги! Не виходьте, доки не буде дано команди відбій повітряної тривоги!</string>
+    <string name="air_alarm_off_description">Шановні громадяни, Ви можете покинути місце укриття. \n Дякуємо, що дочекалися офіційного сповіщення про відбій повітряної тривоги. \n Бережіть себе та рідних!</string>
+    Шановні громадяни, Ви можете покинути місце укриття. \Дякуємо, що дочекалися офіційного сповіщення про відбій повітряної тривоги. \n   Бережіть себе та рідних!
+
 </resources>

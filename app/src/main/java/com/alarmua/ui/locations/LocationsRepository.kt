@@ -1,4 +1,27 @@
 package com.alarmua.ui.locations
 
+import com.alarmua.model.LocationDTO
+import com.alarmua.network.Common
+import kotlinx.coroutines.delay
+
 class LocationsRepository {
+
+    private val retrofitService = Common.retrofitService
+
+    suspend fun getLocations(): List<LocationDTO> {
+        // mock
+        delay(1000)
+        return listOf(
+            LocationDTO("LV"),
+            LocationDTO("KY"),
+            LocationDTO("IF"),
+            LocationDTO("TE"),
+            LocationDTO("LU"),
+            LocationDTO("UZ"),
+            LocationDTO("PO"),
+            LocationDTO("OD"),
+
+        )
+//        return retrofitService.getLocations()
+    }
 }

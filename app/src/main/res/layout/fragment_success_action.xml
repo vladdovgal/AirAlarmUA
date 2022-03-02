@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".ui.success.SuccessActionFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/okButton"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/txtThanks"
+            style="@style/Label.H1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thank_you"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/iconSuccess"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="@dimen/spacing_6"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/checkmark"
+            />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            style="@style/Label.H3"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="@dimen/spacing_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_4"
+            tools:text="@string/subscription_description"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/okButton"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_4"
+        android:text="@string/button_save"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

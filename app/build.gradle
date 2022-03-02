@@ -37,7 +37,9 @@ android {
 }
 
 dependencies {
-    def nav_version = "2.4.1"
+    def navVersion = "2.4.1"
+    def lottieVersion = "5.0.2"
+    def retrofitVersion = "2.9.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -58,6 +60,12 @@ dependencies {
     // Lifecycle extensions
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0-alpha03"
     // Navigation component
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+    // Lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
 }

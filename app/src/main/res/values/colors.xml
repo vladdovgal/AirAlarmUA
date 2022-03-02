@@ -10,4 +10,5 @@
     <color name="secondaryTextColor">#2AFFFFFF</color>
     <color name="backgroundColor">#424242</color>
     <color name="disabledPageColor">#88ffffff</color>
+    <color name="alertOffColor">#0F6513</color>
 </resources>

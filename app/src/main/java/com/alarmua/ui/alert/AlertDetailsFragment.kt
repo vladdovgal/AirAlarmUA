@@ -1,18 +1,27 @@
 package com.alarmua.ui.alert
 
+import android.os.BaseBundle
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.fragment.navArgs
+import com.alarmua.R
 import com.alarmua.databinding.FragmentAlertDetailsBinding
+import com.alarmua.service.ALERT_TYPE_AIR_ALARM_OFF
+import com.alarmua.service.ALERT_TYPE_AIR_ALARM_ON
+import com.alarmua.service.NOTIFICATION_TYPE_ARG
 
 
 class AlertDetailsFragment : Fragment() {
 
     private var binding: FragmentAlertDetailsBinding? = null
     private lateinit var viewModel: AlertDetailsViewModel
+    private val args: AlertDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,25 +29,39 @@ class AlertDetailsFragment : Fragment() {
     ): View? {
         binding = FragmentAlertDetailsBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[AlertDetailsViewModel::class.java]
+
+        val bundle = activity?.intent?.extras?.get(NavController.KEY_DEEP_LINK_EXTRAS) as BaseBundle
+
+        when (bundle.get(NOTIFICATION_TYPE_ARG)) {
+            ALERT_TYPE_AIR_ALARM_ON -> {
+                setAlertOnViews()
+            }
+            ALERT_TYPE_AIR_ALARM_OFF -> {
+                setAlertOffViews()
+            }
+            else -> setAlertOnViews()
+        }
+
         return binding?.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AlertDetailsFragment.
-         */
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AlertDetailsFragment().apply {
-                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun setAlertOnViews() {
+        binding?.apply {
+            alertTitle.setText(R.string.air_alarm_on_title)
+            rootLayout.setBackgroundColor(
+                ContextCompat.getColor(requireContext(), R.color.primaryDarkColor)
+            )
+            alertDescription.setText(R.string.air_alarm_on_description)
+        }
+    }
+
+    private fun setAlertOffViews() {
+        binding?.apply {
+            alertTitle.setText(R.string.air_alarm_off_title)
+            rootLayout.setBackgroundColor(
+                ContextCompat.getColor(requireContext(), R.color.alertOffColor)
+            )
+            alertDescription.setText(R.string.air_alarm_off_description)
+        }
     }
 }

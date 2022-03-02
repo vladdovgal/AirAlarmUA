@@ -2,12 +2,9 @@ package com.alarmua.service
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.content.ContentResolver
 import android.content.Context
-import android.media.AudioAttributes
-import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.navigation.NavDeepLinkBuilder
@@ -26,8 +23,12 @@ const val NOTIFICATION_CHANNEL_ID = "alert_channel_id"
 const val NOTIFICATION_CHANNEL_NAME = "Alert channel"
 const val NOTIFICATION_TITLE_FIELD = "title"
 const val NOTIFICATION_BODY_FIELD = "body"
+const val NOTIFICATION_TYPE_FIELD = "type"
+const val NOTIFICATION_TYPE_ARG = "alarm_type"
+const val ALERT_TYPE_AIR_ALARM_ON = "air_alarm_on"
+const val ALERT_TYPE_AIR_ALARM_OFF = "air_alarm_off"
 
-class MyFirebaseMessagingService: FirebaseMessagingService() {
+class MyFirebaseMessagingService : FirebaseMessagingService() {
     /**
      * Called if the FCM registration token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the
@@ -43,12 +44,16 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        val notificationType = remoteMessage.data[NOTIFICATION_TYPE_FIELD]
+        val args = Bundle()
+        args.putString(NOTIFICATION_TYPE_ARG, notificationType)
         val pendingIntent = NavDeepLinkBuilder(applicationContext)
             .setComponentName(MainActivity::class.java)
             .setGraph(R.navigation.nav_graph)
             .setDestination(R.id.alertDetailsFragment)
-//            .setArguments(bundle) /* todo pass notification type */
+            .setArguments(args)
             .createPendingIntent()
+
         val channelId = NOTIFICATION_CHANNEL_ID
         val notificationTitle = remoteMessage.data[NOTIFICATION_TITLE_FIELD]
         val notificationBody = remoteMessage.data[NOTIFICATION_BODY_FIELD]

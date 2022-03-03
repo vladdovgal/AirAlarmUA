@@ -15,6 +15,7 @@ import com.alarmua.databinding.FragmentAlertDetailsBinding
 import com.alarmua.service.ALERT_TYPE_AIR_ALARM_OFF
 import com.alarmua.service.ALERT_TYPE_AIR_ALARM_ON
 import com.alarmua.service.NOTIFICATION_TYPE_ARG
+import com.alarmua.ui.base.MyMediaPlayer
 
 
 class AlertDetailsFragment : Fragment() {
@@ -29,7 +30,7 @@ class AlertDetailsFragment : Fragment() {
     ): View? {
         binding = FragmentAlertDetailsBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[AlertDetailsViewModel::class.java]
-
+        MyMediaPlayer.stopNotificationSound()
         val bundle = activity?.intent?.extras?.get(NavController.KEY_DEEP_LINK_EXTRAS) as BaseBundle
 
         when (bundle.get(NOTIFICATION_TYPE_ARG)) {
@@ -49,7 +50,7 @@ class AlertDetailsFragment : Fragment() {
         binding?.apply {
             alertTitle.setText(R.string.air_alarm_on_title)
             rootLayout.setBackgroundColor(
-                ContextCompat.getColor(requireContext(), R.color.primaryDarkColor)
+                ContextCompat.getColor(requireContext(), R.color.secondaryDarkColor)
             )
             alertDescription.setText(R.string.air_alarm_on_description)
         }

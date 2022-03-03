@@ -3,6 +3,7 @@
     package="com.alarmua">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".AlarmAppUA"
@@ -23,6 +24,7 @@
         </activity>
         <service
             android:name=".service.MyFirebaseMessagingService"
+            android:foregroundServiceType="mediaPlayback"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

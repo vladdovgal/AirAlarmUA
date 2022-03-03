@@ -1,8 +1,9 @@
 package com.alarmua.ui.locations
 
+import android.util.Log
 import androidx.lifecycle.*
 import androidx.navigation.NavDirections
-import com.alarmua.model.LocationItem
+import com.alarmua.LOG_TAG
 import com.alarmua.ui.base.BaseViewModel
 import com.alarmua.ui.locations.list.toItem
 import com.google.firebase.messaging.FirebaseMessaging
@@ -18,7 +19,6 @@ class LocationsListViewModel : BaseViewModel() {
 
     val locationItems = liveData(Dispatchers.IO) {
         withLoading {
-            delay(1000)
             emit(repository.getLocations().map { dto ->
                 dto.toItem()
             })
@@ -78,7 +78,7 @@ class LocationsListViewModel : BaseViewModel() {
                 if (!task.isSuccessful) {
                     msg = "Failure occurred while trying to subscribe to $locationId"
                 }
-//                showToast(msg)
+                Log.w(LOG_TAG, msg)
             }.await()
     }
 

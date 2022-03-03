@@ -2,15 +2,21 @@ package com.alarmua.service
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.BroadcastReceiver
 import android.content.Context
+import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.navigation.NavDeepLinkBuilder
 import com.alarmua.LOG_TAG
 import com.alarmua.MainActivity
 import com.alarmua.R
+import com.alarmua.ui.base.MyMediaPlayer
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -29,6 +35,9 @@ const val ALERT_TYPE_AIR_ALARM_ON = "air_alarm_on"
 const val ALERT_TYPE_AIR_ALARM_OFF = "air_alarm_off"
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
+
+    private var mp: MediaPlayer? = null
+
     /**
      * Called if the FCM registration token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the
@@ -70,17 +79,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             manager.createNotificationChannel(channel)
         }
 
-/*        val assetsFileDescriptor = assets.openFd("AirRaidSiren.mp3")
 
-        val mediaPlayer: MediaPlayer = MediaPlayer().apply {
-            setDataSource(
-                assetsFileDescriptor.fileDescriptor,
-                assetsFileDescriptor.startOffset,
-                assetsFileDescriptor.length
-            )
-        }
-        mediaPlayer.prepare()
-        mediaPlayer.start()*/
+        MyMediaPlayer.startNotificationSound(this)
         manager.notify(0, builder.build())
     }
 
@@ -89,23 +89,5 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             FCM_SHARED_PREFS_FILE_NAME,
             MODE_PRIVATE
         ).edit().putString(FCM_TOKEN_KEY, token).apply()
-    }
-
-
-    /**
-     * To reduce server load
-     */
-    private fun unregisterToken() {
-        // get old token from local data store and remove it
-        // unregister token on server
-    }
-
-    companion object {
-        fun getToken(context: Context): String? {
-            return context.getSharedPreferences(
-                FCM_SHARED_PREFS_FILE_NAME,
-                MODE_PRIVATE
-            ).getString(FCM_TOKEN_KEY, "empty")
-        }
     }
 }

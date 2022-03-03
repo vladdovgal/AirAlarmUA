@@ -4,6 +4,7 @@ import androidx.lifecycle.*
 import androidx.navigation.NavDirections
 import com.alarmua.model.LocationItem
 import com.alarmua.ui.base.BaseViewModel
+import com.alarmua.ui.locations.list.toItem
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -19,11 +20,7 @@ class LocationsListViewModel : BaseViewModel() {
         withLoading {
             delay(1000)
             emit(repository.getLocations().map { dto ->
-                LocationItem(
-                    dto.locationId,
-                    dto.locationId,
-                    false
-                )
+                dto.toItem()
             })
         }
     } as MutableLiveData

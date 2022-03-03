@@ -1,7 +1,9 @@
 package com.alarmua.model
 
+import androidx.annotation.StringRes
+
 data class LocationItem(
   val id: String = "NO_ID",
-  val name: String,
+  @StringRes val readableName: Int,
   var isSelected: Boolean = false,
 )

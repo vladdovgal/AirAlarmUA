@@ -40,11 +40,6 @@ class MainViewModel : BaseViewModel() {
             findPlaceToStay,
             saveLifeInUa,
             ukraineAvengerBot,
-            DashboardItem(
-                R.string.support_army,
-                R.drawable.ic_edit_location,
-                "dummy url"
-            )
         )
     }
 

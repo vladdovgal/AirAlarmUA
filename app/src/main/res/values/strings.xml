@@ -19,6 +19,31 @@
     <string name="air_alarm_off_title">Увага! \n Відбій повітряної тривоги!</string>
     <string name="air_alarm_on_description">Зберігайте спокій! \n Якщо ви вдома, вимкніть світло та газ, візьміть документи, необхідні ліки, трохи харчів та води і перейдіть у найближче укриття. Повідомте також сусідів та осіб з інвалідністю. Допоможіть їм перейти в укриття. \n \n Увага! Залишайтеся в укритті до наступного сигналу сирени, яка означає відбій повітряної тривоги! Не виходьте, доки не буде дано команди відбій повітряної тривоги!</string>
     <string name="air_alarm_off_description">Шановні громадяни, Ви можете покинути місце укриття. \n Дякуємо, що дочекалися офіційного сповіщення про відбій повітряної тривоги. \n Бережіть себе та рідних!</string>
-    Шановні громадяни, Ви можете покинути місце укриття. \Дякуємо, що дочекалися офіційного сповіщення про відбій повітряної тривоги. \n   Бережіть себе та рідних!
 
+    <!-- Locations -->
+    <string name="lviv">Львівська область</string>
+    <string name="ivano_frankivsk">Івано-Франківська область</string>
+    <string name="volyn">Волинська область</string>
+    <string name="ternopil">Тернопільська область</string>
+    <string name="uzhorod">Закарпатська область</string>
+    <string name="chernivtsi">Чернівецька область</string>
+    <string name="kyiv">Київська область</string>
+    <string name="odesa">Одеська область</string>
+    <string name="herson">Херсонська область</string>
+    <string name="chernihiv">Чернігівська область</string>
+    <string name="zhytomyr">Житомирська область</string>
+    <string name="khmelnitsky">Хмельницька область</string>
+    <string name="symy">Сумська область</string>
+    <string name="rivne">Рівненська область</string>
+    <string name="poltava">Полтавська область</string>
+    <string name="zaporizha">Запорізька область</string>
+    <string name="donetsk">Донецька область</string>
+    <string name="luhansk">Луганська область</string>
+    <string name="vinnisty">Вінницька область</string>
+    <string name="dnipro">Дніпропетровська область</string>
+    <string name="kropyvnysky">Кропивницька область</string>
+    <string name="mykolaiv">Миколаївська область</string>
+    <string name="kharkiv">Харківська область</string>
+    <string name="cherkasy">Черкаська область</string>
+    <string name="not_supported">Невідома область</string>
 </resources>

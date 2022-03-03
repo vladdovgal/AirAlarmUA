@@ -21,6 +21,12 @@ class LocationsRepository {
             LocationDTO("UZ"),
             LocationDTO("PO"),
             LocationDTO("OD"),
+            LocationDTO("CHK"),
+            LocationDTO("CHG"),
+            LocationDTO("VO"),
+            LocationDTO("ZH"),
+            LocationDTO("DO"),
+            LocationDTO("VI"),
 
         )
 //        return retrofitService.getLocations()

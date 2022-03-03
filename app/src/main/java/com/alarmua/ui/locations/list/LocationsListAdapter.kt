@@ -34,7 +34,7 @@ class LocationsListAdapter(
     inner class LocationViewHolder(private val itemBinding: ItemLocationBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(location: LocationItem) {
             with(itemBinding) {
-                locationName.text = location.name
+                locationName.setText(location.readableName)
                 radioButton.isChecked = location.isSelected
                 locationItem.setOnClickListener {
                     radioButton.performClick()

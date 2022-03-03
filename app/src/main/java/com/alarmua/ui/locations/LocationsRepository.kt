@@ -10,6 +10,7 @@ class LocationsRepository {
 
     suspend fun getLocations(): List<LocationDTO> {
         // mock
+        // TO DO: LOAD LOCATIONS FROM SERVER
         delay(1000)
         return listOf(
             LocationDTO("LV"),

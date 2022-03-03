@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="140dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/shape_rectangle"
     android:layout_margin="@dimen/spacing_2"
+    android:padding="@dimen/spacing_2"
     >
 
     <LinearLayout
@@ -18,14 +19,14 @@
 
         <ImageView
             android:id="@+id/linkImage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/ic_edit_location"
             />
 
         <TextView
             android:id="@+id/linkTitle"
-            style="@style/Label.H5"
+            style="@style/Label.Body2.Bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/support_army"

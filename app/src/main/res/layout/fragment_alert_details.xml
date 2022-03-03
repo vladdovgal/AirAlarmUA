@@ -34,6 +34,7 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             app:lottie_rawRes="@raw/alert"
+            app:lottie_autoPlay="true"
             />
 
         <TextView

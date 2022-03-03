@@ -37,43 +37,6 @@ class LocationsListViewModel : BaseViewModel() {
     private val _navigationDestination: MutableLiveData<NavDirections?> = MutableLiveData(null)
     val navigationDestination: LiveData<NavDirections?> = _navigationDestination
 
-    init {
-//        viewModelScope.launch {
-//            withLoading {
-//                // MOCK fetching locations
-//                // repository.fetchLocations()
-//                delay(1000)
-//                _locations.value = listOf(
-//                    LocationItem("LV", "Lviv disctrict"),
-//                    LocationItem("KY", "Kyiv disctrict"),
-//                    LocationItem("IF", "Ivano-Frankivsk disctrict"),
-//                    LocationItem("TE", "Ternopil disctrict"),
-//                    LocationItem("T1", "Ternopil disctrict"),
-//                    LocationItem("T2", "Ternopil disctrict"),
-//                    LocationItem("T3", "Ternopil disctrict"),
-//                    LocationItem("T4", "Ternopil disctrict"),
-//                    LocationItem("T5", "Ternopil disctrict"),
-//                    LocationItem("T6", "Ternopil disctrict"),
-//                    LocationItem("T7", "Ternopil disctrict"),
-//                    LocationItem("T9", "Ternopil disctrict"),
-//                    LocationItem("T10", "Ternopil disctrict"),
-//                    LocationItem("T11", "Ternopil disctrict"),
-//                    LocationItem("T12", "Ternopil disctrict"),
-//                    LocationItem("T13", "Ternopil disctrict"),
-//                )
-//            }
-//        }
-    }
-
-//    private fun fetchLocations() {
-//        viewModelScope.launch {
-//
-//            _locations.value = liveData(Dispatchers.IO) {
-//                emit(repository.getLocations())
-//            }
-//        }
-//    }
-
     fun selectItem(itemId: String) {
         viewModelScope.launch {
             val locations = locationItems.value ?: emptyList()

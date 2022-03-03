@@ -14,7 +14,7 @@ open class BaseViewModel: ViewModel() {
     private val _shortMessage: MutableLiveData<String> = MutableLiveData("")
     val shortMessage: LiveData<String> = _shortMessage
 
-    private fun loading(loading: Boolean) {
+    fun loading(loading: Boolean) {
         viewModelScope.launch {
             _isLoading.value = loading
         }

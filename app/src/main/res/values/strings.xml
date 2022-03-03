@@ -9,8 +9,12 @@
     <string name="thank_you">Дякую\!</string>
     <string name="subscription_description">Ви успішно підписалися на сповіщення в %1$s області. \n <b> Увімкніть звук сповіщеннь, щоб не пропустити повітряну тривогу. </b> </string>
     <string name="change_location">Змінити область</string>
+    <string name="unsubscribe_location">Відписатися від сповіщень в %1$s</string>
     <string name="cancel_subscription">Скасувати підписку</string>
     <string name="support_army">Підтримати армію</string>
+    <string name="share_enemy_actions">Повідомити про ворожі дії / мітки</string>
+    <string name="shelters_map">Мапа укриттів</string>
+    <string name="find_place_to_stay">Знайти прихисток</string>
     <string name="air_alarm_on_title">Увага! \n Повітряна тривога!</string>
     <string name="air_alarm_off_title">Увага! \n Відбій повітряної тривоги!</string>
     <string name="air_alarm_on_description">Зберігайте спокій! \n Якщо ви вдома, вимкніть світло та газ, візьміть документи, необхідні ліки, трохи харчів та води і перейдіть у найближче укриття. Повідомте також сусідів та осіб з інвалідністю. Допоможіть їм перейти в укриття. \n \n Увага! Залишайтеся в укритті до наступного сигналу сирени, яка означає відбій повітряної тривоги! Не виходьте, доки не буде дано команди відбій повітряної тривоги!</string>
